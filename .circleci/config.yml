@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: trzeci/emscripten:latest
+    steps:
+      - checkout
+      - run: em++ -s WASM=1 hello.cpp
